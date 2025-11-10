@@ -120,6 +120,5 @@ def procesar():
 
 if __name__ == "__main__":
     import os
-    # Railway asigna el puerto en la variable de entorno PORT
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))  # <-- aquí usa la variable del sistema
     app.run(host="0.0.0.0", port=port)
