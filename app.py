@@ -119,5 +119,7 @@ def procesar():
     return jsonify({"filename": filename, "image_base64": out_b64})
 
 if __name__ == "__main__":
-    # Para ejecución local
-    app.run(host="0.0.0.0", port=5000)
+    import os
+    # Railway asigna el puerto en la variable de entorno PORT
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
